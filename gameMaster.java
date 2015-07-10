@@ -17,8 +17,8 @@ public class gameMaster {
         boolean HaveWinner = false;
 
         HaveWinner = checkRaws(symbol, cells);
-        HaveWinner = !HaveWinner && checkColum(symbol, cells);
-        HaveWinner = !HaveWinner && checkDiagonal(symbol, cells);
+        HaveWinner = HaveWinner || checkColum(symbol, cells);
+        HaveWinner = HaveWinner || checkDiagonal(symbol, cells);
 
         return HaveWinner;
     }
@@ -82,13 +82,11 @@ public class gameMaster {
         }
 
         num = 0;
-        for(int i=0;i<3;i++){
-            for(int j=2; j>-1;j--) {
-                if (cells[i][j].getSymbol() == symbol) {
-                    num++;
-                    if (num == 3) {
-                        return true;
-                    }
+        for (int i = 0, j = 2; i < 3 && j > -1; i++, j--) {
+            if (cells[i][j].getSymbol() == symbol) {
+                num++;
+                if (num == 3) {
+                    return true;
                 }
             }
         }

@@ -17,6 +17,12 @@ public abstract class Player {
         this.symbol = symbol;
     }
 
+    public String getNumberForArray(int x, int y){
+
+        return Integer.toString((x*3+y+1));
+
+    }
+
     public abstract void makeMove(Cell[][] cells, ArrayList<String> freeCells);
 
 }

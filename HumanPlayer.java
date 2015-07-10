@@ -67,6 +67,7 @@ public class HumanPlayer extends Player {
 
             if (gameMaster.checkEmptyCell(cells[x][y])) {
                 cells[x][y].setSymbol(this.getSymbol());
+                freeCells.remove(getNumberForArray(x,y));
                 break;
             }else{
                 printerConsole.wrongMove();

@@ -15,5 +15,19 @@ public class AiPlayer extends Player {
     @Override
     public void makeMove(Cell[][] cells, ArrayList<String> freeCells){
 
+        if(difficultAI){
+            makeMoveDiff(cells, freeCells);
+        }else {
+            makeMoveEasy(cells, freeCells);
+        }
+
+    }
+
+    private void makeMoveDiff(Cell[][] cells, ArrayList<String> freeCells){
+
+    }
+
+    private void makeMoveEasy(Cell[][] cells, ArrayList<String> freeCells){
+
     }
 }
