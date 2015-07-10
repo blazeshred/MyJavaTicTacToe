@@ -23,6 +23,14 @@ public abstract class Player {
 
     }
 
+    public int[] getXY(int position){
+        int[] xy = new int[2];
+        int x = position/3;
+        xy[0]=x;
+        xy[1] = position - x*3;
+        return xy;
+    }
+
     public abstract void makeMove(Cell[][] cells, ArrayList<String> freeCells);
 
 }
